@@ -1,23 +1,21 @@
-let nombre = prompt("Saisir le nombre de notes");
-let somme = 0;
-for (let i = 0; i < nombre; i++) {
-   let note = parseInt(prompt("saisir une note "));
-   somme += note;
+let nombre = 120;
+//switch case avec une valeur
+switch (nombre) {
+    case 120:
+        console.log("le nombre vaut 120")
+        break;
+    default:
+        break;
 }
-
-// calculer la moyenne de notes et l'afficher dans la console 
-console.log(somme/nombre);
-
-//version avec le tableau
-let nombre2 = prompt("Saisir le nombre de notes");
-let somme2 = 0;
-let notes2 = [];
-//boucle pour ajouter des notes au tableau
-for(let i = 0; i<somme2; i++){
-    notes2.push(parseInt(prompt("Saisir la note")));
+//switch case (condition)
+switch (true) {
+    case nombre<120:case nombre<500:case nombre<1000:    
+        console.log("je suis rentré dans ce cas");
+        break;
+    case nombre>120:
+        break;
+    default:
+        break;
 }
-//boucle pour ajouter les valeurs à somme
-for(let j = 0; j<notes2.length; j++){
-    somme2 += notes2[j];
-}
-console.log(somme2/nombre2);
+//opérateur ternaire
+let test = nombre>0 ? "positif":"negatif";
