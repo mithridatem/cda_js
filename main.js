@@ -1,49 +1,23 @@
-//version  avec le bouton submit
+let nombre = prompt("Saisir le nombre de notes");
+let somme = 0;
+for (let i = 0; i < nombre; i++) {
+   let note = parseInt(prompt("saisir une note "));
+   somme += note;
+}
 
-/* document.getElementById('form').onsubmit = (event)=>{
-    event.preventDefault();
-    console.log('verif');
-    let nom = document.getElementById('name').value;
-    console.log(nom);
-    let prenom = document.getElementById('firstname').value;
-    console.log(prenom);
-    let email = document.getElementById('email').value;
-    console.log(email);
-    let utilisateur = [];
-    utilisateur.push(nom);
-    utilisateur.push(prenom);
-    utilisateur.push(email);
-    console.log(utilisateur);
-} */
-/*avec une fonction et onclick en HTML
-function ajouter(){
-    //récupérer les 3 inputs du formulaire
-    let nom = document.getElementById('name').value;
-    console.log(nom);
-    let prenom = document.getElementById('firstname').value;
-    console.log(prenom);
-    let email = document.getElementById('email').value;
-    console.log(email);
-    //création  d'un tableau vide
-    let utilisateur = [];
-    //ajout des valeurs au tableau
-    utilisateur.push(nom);
-    utilisateur.push(prenom);
-    utilisateur.push(email);
-    //affichage du tableau dans la console
-    console.log(utilisateur); 
-}*/
+// calculer la moyenne de notes et l'afficher dans la console 
+console.log(somme/nombre);
 
-//avec un écouteur d'événement
-document.getElementById('bt').addEventListener('click', function(){
-    //récupération des 3 inputs du formulaire
-    let nom = document.getElementById('name').value;
-    let prenom = document.getElementById('firstname').value;
-    let email = document.getElementById('email').value;
-    //créationd 'un tableau
-    let utilisateur = [];
-    //ajout des données (colonne) dans le tableau
-    utilisateur.push(nom, prenom, email);
-    //affichage dans la console du tableau
-    console.log(utilisateur);
-})
+//version avec le tableau
+let nombre2 = prompt("Saisir le nombre de notes");
+let somme2 = 0;
+let notes2 = [];
+//boucle pour ajouter des notes au tableau
+for(let i = 0; i<somme2; i++){
+    notes2.push(parseInt(prompt("Saisir la note")));
+}
+//boucle pour ajouter les valeurs à somme
+for(let j = 0; j<notes2.length; j++){
+    somme2 += notes2[j];
+}
+console.log(somme2/nombre2);
