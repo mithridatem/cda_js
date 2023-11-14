@@ -13,9 +13,15 @@ while(j< tableau.length){
 tableau.forEach((e)=>{
     console.log(e);
 })
+console.log("for in")
 //boucle for in
 for (const key in tableau) {
     console.log(tableau[key]);
+}
+console.log("for of")
+//boucle for of
+for (const iterator of tableau) {
+    console.log(iterator);
 }
 //tableau associatif
 let tabAsso = {
