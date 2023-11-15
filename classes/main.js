@@ -6,12 +6,14 @@ class Animal{
     taille;
     poid;
     couleur;
+    static nbr = 0;
     //Constructeur
     constructor(newEspece, newNbrPattes, newTaille, newPoid){
         this.espece = newEspece;
         this.nbrPattes = newNbrPattes;
         this.taille = newTaille;
         this.poid = newPoid;
+        this.constructor.ajouter();
     }
     //méthode
     crier(){
@@ -30,15 +32,19 @@ class Animal{
         else{
             console.log("Aucun cris pour cette espéce");
         }
-        
+
     }
     dormir(){
         console.log("Zzzzz");
     }
+    static ajouter(){
+        Animal.nbr +=1;
+    }
+    static afficher(){
+        return Animal.nbr;
+    }
 }
 const chien = new Animal('chien', 4, 50, 9);
 const coq = new Animal('coq', 2, 40, 3);
-chien.crier();
-coq.crier();
-chien.dormir();
-coq.dormir();
+const test = new Animal('coq', 2, 40, 3);
+console.log(Animal.afficher());
