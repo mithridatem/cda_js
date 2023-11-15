@@ -30,12 +30,20 @@ class Maison {
     static ajouter(){
         Maison.nbrDeMaison++ 
     }
+    //méthode pour comparer l'objet courant (this) avec un autre objet Maison
+    plusGrande(objet){
+        if(this.surface()<objet.surface()){
+            return objet.nom;
+        }else{
+            return this.nom;
+        }
+    }
 }
 //instancier un objet Maison
-const villa = new Maison("villa", 10, 20);
+const villa = new Maison("villa", 100, 200);
 console.log(`Le périmètre de ${villa.nom} est égal à : ${villa.perimetre()} m`);
 console.log(`La surface de ${villa.nom} est égale à : ${villa.surface()} m²`);
-//const immeuble = new Maison("immeuble", 30, 40);
+const immeuble = new Maison("immeuble", 30, 40);
 console.log(
 	`Le périmètre de ${immeuble.nom} est égal à : ${immeuble.perimetre()} m`
 );
@@ -44,3 +52,5 @@ console.log(
 );
 const magasin = new Maison("magasin", 40, 20);
 console.log(`On à instancié : ${Maison.nbrDeMaison} ${Maison.nbrDeMaison > 1?'Maisons':'Maison'} `);
+//affichage de la Maison la plus grande
+console.log(`La maison la plus grande est : ${villa.plusGrande(magasin)}`)
