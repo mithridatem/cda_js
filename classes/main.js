@@ -18,17 +18,27 @@ class Animal{
         if(this.espece == "Tigre" || this.espece == "tigre"){
             console.log("Grrr");
         }
-        if(this.espece == "Chat" || this.espece == "chat"){
+        else if(this.espece == "Chat" || this.espece == "chat"){
             console.log("Miaou");
         }
+        else if(this.espece == "Chien"|| this.espece == "chien"){
+            console.log("Ouaff");
+        }
+        else if(this.espece == "Coq" || this.espece == "coq"){
+            console.log("Cocorico");
+        }
+        else{
+            console.log("Aucun cris pour cette espéce");
+        }
+        
+    }
+    dormir(){
+        console.log("Zzzzz");
     }
 }
-const tigre = new Animal('tigre', 4, 150, 180);
-const chat = new Animal('chat', 4, 30,4);
-
-console.log(tigre);
-tigre.taille = 180;
-tigre.couleur = "Blanc";
-console.log(tigre);
-tigre.crier();
-chat.crier();
+const chien = new Animal('chien', 4, 50, 9);
+const coq = new Animal('coq', 2, 40, 3);
+chien.crier();
+coq.crier();
+chien.dormir();
+coq.dormir();
