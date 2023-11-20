@@ -40,9 +40,10 @@ const liste = document.querySelectorAll('p');
 const liste2 = document.getElementsByTagName('p');
 
 //paragraphe individuel
-/* const p1 = document.querySelector('div > p:nth-child(2)');
+const p1 = document.querySelector('div > p:nth-child(2)');
 const p2 = document.querySelector('div > p:nth-child(3)');
-const p3 = document.querySelector('div > p:nth-child(4)'); */
+const p3 = document.querySelector('div > p:nth-child(4)');
+console.log(p1,p2,p3)
 liste[0].textContent = user.nom;
 liste[1].textContent = user.prenom;
 liste[2].textContent = user.age;
@@ -58,8 +59,11 @@ liste.forEach(element=>{
 //taille de l'image
 img.style.width = "100px";
 img.style.height = "100px";
-img.style.right = 0;
+img.style.position=  "absolute";
+img.style.top= "50px";
+img.style.right= 0;
 img.style.margin = "10px"
 //couleur de la div
 div.style.background = "rgb(220, 220, 220)";
+div.style.height = "200px"
 
