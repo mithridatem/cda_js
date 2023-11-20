@@ -32,4 +32,3 @@ paragraphe.textContent = "nouveau contenu du paragraphe";
 
 //bonus
 div.firstChild.textContent = "remplacement du texte 1 enfant";
-
