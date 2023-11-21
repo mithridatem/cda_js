@@ -29,41 +29,47 @@ const user = {
                 age: 44,
                 image :'./logo.jpg'
         }
-//récupération de la div
 const div = document.querySelector('div');
-//ajout de l'attribut id avec en valeur 1
+//ajout de l'attribut id
 div.setAttribute('id', user.id);
-//récupération de la liste des paragraphes
-//version  nodelist
+//récupération des paragraphes avec un sélecteur css
+const p1 = document.querySelector('div>p:nth-child(2)');
+const p2 = document.querySelector('div>p:nth-child(3)');
+const p3 = document.querySelector('div>p:nth-child(4)');
+//version alternative pour récupérer les paragraphes (individuel)
+const p1bis = div.firstChild.nextSibling;
+const p2bis = p1bis.nextSibling;
+const p3bis = p2bis.nextSibling;
+//dans une node list
 const liste = document.querySelectorAll('p');
-//version html Collection
-const liste2 = document.getElementsByTagName('p');
-
-//paragraphe individuel
-const p1 = document.querySelector('div > p:nth-child(2)');
-const p2 = document.querySelector('div > p:nth-child(3)');
-const p3 = document.querySelector('div > p:nth-child(4)');
-console.log(p1,p2,p3)
-liste[0].textContent = user.nom;
-liste[1].textContent = user.prenom;
-liste[2].textContent = user.age;
-
-//remplacer la valeur de src image
-const img = document.querySelector('img');
-img.src = user.image;
-//style des paragraphes
-liste.forEach(element=>{
-        element.style.color = "blue";
-        element.style.fontSize = "11px";
-});
-//taille de l'image
-img.style.width = "100px";
+//remplacer le contenu
+p1.textContent = user.nom;
+p2.textContent = user.prenom;
+p3.textContent = user.age;
+//ajouter la source de l'image
+const img = document.querySelector('div>img');
+//modifier avec setAttribute
+/* img.setAttribute('src', user.image); */
+//modifier la source avec src
+img.src= user.image;
+//modifier le style des paragraphes
+p1.style.color = "blue";
+p1.style.fontSize = "11px";
+p2.style.color = "blue";
+p1.style.fontSize = "11px";
+p3.style.color = "blue";
+p1.style.fontSize = "11px";
+//avec une boucle
+/* liste.forEach(paragraphe=>{
+        paragraphe.style.color = "blue";
+        paragraphe.style.fontSize = "11px";
+}); */
+//mise en forme l'image
 img.style.height = "100px";
-img.style.position=  "absolute";
-img.style.top= "50px";
-img.style.right= 0;
-img.style.margin = "10px"
-//couleur de la div
-div.style.background = "rgb(220, 220, 220)";
-div.style.height = "200px"
-
+img.style.width = "100px";
+img.style.display = "absolute";
+img.style.right = 0;
+img.style.top = 0;
+img.style.margin = "10px";
+//couleur de fond de la div
+div.style.backgroundColor = "rgb(220,220,220)";
