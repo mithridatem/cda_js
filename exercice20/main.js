@@ -67,7 +67,7 @@ liste.forEach(paragraphe=>{
 //mise en forme l'image
 img.style.height = "100px";
 img.style.width = "100px";
-img.style.display = "absolute";
+img.style.position = "absolute";
 img.style.right = 0;
 img.style.top = 0;
 img.style.margin = "10px";
