@@ -60,10 +60,10 @@ p1.style.fontSize = "11px";
 p3.style.color = "blue";
 p1.style.fontSize = "11px";
 //avec une boucle
-/* liste.forEach(paragraphe=>{
+liste.forEach(paragraphe=>{
         paragraphe.style.color = "blue";
         paragraphe.style.fontSize = "11px";
-}); */
+});
 //mise en forme l'image
 img.style.height = "100px";
 img.style.width = "100px";
