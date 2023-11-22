@@ -31,39 +31,36 @@ A chaque clic sur la fonction :
           -Ajouter une fonction updateTask qui va :
             Mettre à jour le nom de la tache depuis l'input du formulaire (id = task)
 NB : on à besoin d'utiliser la création d'élément (createElement() et appendChild()) */
-
-//récupération de la div (id="tasks")
+//récupération de la div (tasks)
 const tasks = document.querySelector('#tasks');
-//function addTask
+
+//ajout de la fonction addTask
 function addTask(){
-    //récupération de la valeur saisie dans l'input task
-    const task = document.getElementById('task').value;
+    //récupérer la valeur dans l'input (id = task)
+    const task = document.querySelector('#task').value;
+    //tester la valeur de task
     if(task!=""){
         //créer une div
         const container = document.createElement('div');
-        //ajouter une classe
-        container.setAttribute('class', 'container');
-        //créer les 2 boutons
+        //assigner un id
+        container.setAttribute('id', 'container');
+        //création de l'élément
+        const paragraphe = document.createElement('p');
+        //assigner la valeur au paragraphe
+        paragraphe.textContent = task;
+        //créer le bouton delete
         const btDel = document.createElement('button');
-        //ajouter id au bouton
+        //ajouter les attributs
         btDel.setAttribute('id', 'delete');
-        //ajout du texte du bouton
-        btDel.textContent = "Delete";
-        //ajouter le onclick au bouton
-        btDel.setAttribute('onclick', "deleteTask(this)");
+        btDel.setAttribute('onclick', 'deleteTask(this)');
+        btDel.textContent = "delete";
         //créer le bouton update
         const btUpdate = document.createElement('button');
-        //ajouter un id au bouton
+        //ajouter les attributs
         btUpdate.setAttribute('id', 'update');
-        //ajout du texte du bouton
-        btUpdate.textContent = "Update";
-        //ajouter la fonction updateTask au bouton
         btUpdate.setAttribute('onclick', 'updateTask(this)');
-        //créer un paragraphe
-        const paragraphe = document.createElement('p');
-        //ajouter la valeur de l'input au nouveau paragraphe
-        paragraphe.textContent = task;
-        //ajouter les enfants à la div (id="container")
+        btUpdate.textContent = "update";
+        //ajouter les éléments dans la div container
         container.appendChild(paragraphe);
         container.appendChild(btDel);
         container.appendChild(btUpdate);
@@ -71,30 +68,28 @@ function addTask(){
         tasks.appendChild(container);
     }
 }
+
+//fonction supprimer les taches
 function delAllTask(){
-    //boucle pour parcourir le premier enfant
     while(tasks.firstChild){
-        //supprimer le premier enfant
         tasks.firstChild.remove();
     }
 }
+
+//fonction pour recharger la page
 function reload(){
-    //alternative
-    //window.location.reload();
-    //version raccourci
     location.reload();
 }
-//fonction supprimer une tache
-function deleteTask(e) {
-    //récupére le bouton-> passe au parent et on supprime le parent
+//fonction supprimer une tache (la tache ciblée)
+function deleteTask(e){
     e.parentNode.remove();
 }
-//fonction pour mettre à jour une tache
+//fonction pour mette à jour une tache
 function updateTask(e){
-    //récupérer la valeur de task (input)
+    //récupérer la valeur dans l'input (id = task)
     const task = document.querySelector('#task').value;
+    //vérification de la valeur de tache
     if(task!=""){
-        //mise à jour du paragraphe
         e.parentNode.firstChild.textContent = task;
     }
 }
